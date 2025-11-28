@@ -1,0 +1,13 @@
+# Note: We'll use emptyDir in the pipeline instead of PVC
+# This file is kept for reference but won't be applied
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pipeline-workspace
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  # storageClassName will be set when we find an available class
